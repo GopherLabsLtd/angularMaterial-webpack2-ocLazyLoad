@@ -12,7 +12,30 @@ export default (ngModuleRef, angularRef) => {
         $stateProvider
         .state('index', {
             url: '/',
-            template: "Test template"
+            controller: 'indexController',
+            templateProvider: ['$q', function ($q) {
+                let deferred = $q.defer();
+                require.ensure(['./index/index.html'], function () {
+                    let template = require('./index/index.html');
+                    deferred.resolve(template);
+                });
+
+                return deferred.promise;
+            }],
+            resolve: {
+                foo: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
+                    let deferred = $q.defer();
+                    require.ensure([], function () {
+                        let module = require('./index/index.js')(angularRef);
+                        $ocLazyLoad.load({
+                            name: 'myAppIndex'
+                        });
+                        deferred.resolve(module);
+                    });
+                    
+                    return deferred.promise;
+                }]
+           }
         })
 
         $urlRouterProvider.otherwise('/');
