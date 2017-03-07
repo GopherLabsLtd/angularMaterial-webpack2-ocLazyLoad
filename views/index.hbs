@@ -11,6 +11,34 @@
     <script src="/assets/main.bundle.js"></script>
 </head>
 <body ng-app="myApp" ng-controller="myAppCtrl" ng-cloak>
-    <!--we use the slash in \{{title}} to not get angular expressions confused with handlebars' (hbs)-->
-    \{{title}}
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-icon class="mdi mdi-face mdi-space"></md-icon>
+
+        <h2 flex md-truncate>My App</h2>
+
+        <md-menu md-position-mode="target-right target" >
+          <md-button class="md-icon-button" aria-label="Menu" ng-click="$mdMenu.open($event)">
+            <md-icon class="mdi mdi-dots-vertical"></md-icon>
+          </md-button>
+          
+          <md-menu-content width="4" >
+            <md-menu-item ng-repeat="item in [1, 2, 3]">
+              <md-button ng-click="ctrl.announceClick($index)">
+                  <div layout="row" flex>
+                    <p flex>Option \{{item}}</p>
+                    <md-icon md-menu-align-target md-svg-icon="call:portable-wifi-off" style="margin: auto 3px auto 0;"></md-icon>
+                  </div>
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
+      </div>
+    </md-toolbar>
+
+    <md-card style="max-width: 600px; margin: 30px auto;">
+        <md-content layout-padding>
+            <div ui-view>
+        </md-content>
+    </md-card>
 </body></html>
