@@ -17,7 +17,10 @@ var config = {
         loaders: [
             {
                 test: /\.js$/,
-                loaders: ['babel-loader?compact=true', WebpackStrip.loader('console.log')]
+                use: [
+                    { loader: 'babel-loader', query: { compact: true } },
+                    WebpackStrip.loader('console.log')
+                ]
             }, {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
