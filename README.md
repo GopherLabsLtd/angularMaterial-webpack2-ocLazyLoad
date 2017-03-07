@@ -1,3 +1,4 @@
+# Express + AngularJS + AngularMaterial + Webpack 2
 ![angular 1.5.9](https://img.shields.io/badge/angular-1.5.9-brightgreen.svg) ![webpack 2.2.1](https://img.shields.io/badge/webpack-2.2.1-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 <img src="https://raw.githubusercontent.com/preciousDev/angularMaterial-webpack-ocLazyLoad/master/preview.gif" alt="An express app running angularJS, built through webpack and lazy-loaded assets" style="max-width: 100%;" width="650">
@@ -5,12 +6,12 @@
 This is an express server setup being built using webpack, and running angular-material on the frontend.
 
 ### Current Webpack Configs
-- Reads Sass & bundles into the final CSS
-- Can make multiple bundles with multiple entries
-- Removes all console.log calls
-- Removes all comments
+- Reads Sass & bundles into the final CSS 🎉
+- Can make multiple bundles with multiple entries 😍
+- Removes all console.log calls 🙏
+- Removes all comments 👌
 - Bundles CSS, JS, images, fonts & videos
-- Excracts bundles to files instead of inline (all minified)
+- Excracts bundles to files instead of inline (all minified) 🔥
 
 ### Usage
 Install webpack:
