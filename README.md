@@ -15,21 +15,24 @@ This is an express server setup being built using webpack, and running angular-m
 
 ### Usage
 1. Install webpack:
+```shell
+npm install -g webpack
+```
 
-    npm install -g webpack
-    
 2. Install the dependecies:
-
-    npm install
+```shell
+npm install
+```
 
 3. To start the webpack-dev-server:
-
-    npm run dev
+```shell
+npm run dev
+```
 
 4. To build and run:
-
-    npm start
-    
+```shell
+npm start
+```
 ### Contributing
 If you feel that something is missing, make an issue! 🙂
 If you want do add something, just make a Pull Request.
