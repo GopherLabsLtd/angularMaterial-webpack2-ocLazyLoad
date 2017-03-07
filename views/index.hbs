@@ -1,2 +1,16 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<!DOCTYPE html>
+<html>
+<head>
+<title>My App</title>
+<meta charset='UTF-8'>
+    <link rel='stylesheet' href='/assets/main.css'>
+
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon" />
+
+    <script src="/assets/main.bundle.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myAppCtrl" ng-cloak>
+    <!--we use the slash in \{{title}} to not get angular expressions confused with handlebars' (hbs)-->
+    \{{title}}
+</body></html>
