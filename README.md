@@ -3,7 +3,7 @@
 
 This is an express server setup being built using webpack, and running angular-material on the frontend.
 
-<img src="https://raw.githubusercontent.com/preciousDev/angularMaterial-webpack2-ocLazyLoad/master/preview.gif" alt="An express app running angularJS, built through webpack and lazy-loaded assets" style="max-width: 100%;" width="450">
+<img src="https://raw.githubusercontent.com/preciousDev/angularMaterial-webpack2-ocLazyLoad/master/preview.gif" alt="An express app running angularJS, built through webpack and lazy-loaded assets" style="max-width: 100%;" width="600">
 
 ### Current Webpack Configs
 - Reads Sass & bundles into the final CSS 🎉
