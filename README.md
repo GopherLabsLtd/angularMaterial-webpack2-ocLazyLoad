@@ -14,17 +14,22 @@ This is an express server setup being built using webpack, and running angular-m
 - Excracts bundles to files instead of inline (all minified) 🔥
 
 ### Usage
-Install webpack:
+1. Install webpack:
 
     npm install -g webpack
-To build and run:
-
-    npm start
     
-To start the webpack-dev-server:
+2. Install the dependecies:
+
+    npm install
+
+3. To start the webpack-dev-server:
 
     npm run dev
 
+4. To build and run:
+
+    npm start
+    
 ### Contributing
 If you feel that something is missing, make an issue! 🙂
 If you want do add something, just make a Pull Request.
