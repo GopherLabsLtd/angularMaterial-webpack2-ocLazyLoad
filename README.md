@@ -4,6 +4,14 @@
 
 This is an express server setup being built using webpack, and running angular-material on the frontend.
 
+### Current Webpack Configs
+- Reads Sass & bundles into the final CSS
+- Can make multiple bundles with multiple entries
+- Removes all console.log calls
+- Removes all comments
+- Bundles CSS, JS, images, fonts & videos
+- Excracts bundles to files instead of inline (all minified)
+
 ### Usage
 Install webpack:
 
