@@ -1,0 +1,21 @@
+p {
+    &.test {
+        font-size: 37px;
+    }
+}
+
+md-list-item {
+    button.md-icon-button {
+        visibility: hidden;
+
+        md-icon {
+            font-size: 20px;
+        }
+    }
+
+    &:hover {
+        button.md-icon-button {
+            visibility: visible;
+        }
+    }
+}
