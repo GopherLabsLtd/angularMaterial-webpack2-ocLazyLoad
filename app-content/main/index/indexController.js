@@ -3,12 +3,14 @@ export default ngModule => {
     .controller('indexController', ['$scope', '$state', function($scope, $state) {
         $scope.title = "Select some users";
 
+        var currentDate = Math.floor(Date.now());
+
         $scope.people = [
-            { name: 'Janet Perkins', img: '3.jpg', newMessage: true },
-            { name: 'Mary Johnson', img: '5.jpg', newMessage: false },
-            { name: 'Peter Carlsson', img: '1.jpg', newMessage: false },
-            { name: 'John Cage', img: '4.jpg', newMessage: false },
-            { name: 'David Kellerman', img: '2.jpg', newMessage: false }
+            { name: 'Janet Perkins', img: '3.jpg', dateJoined: currentDate - 500, gender: "Female" },
+            { name: 'Mary Johnson', img: '5.jpg', dateJoined: currentDate - 2500, gender: "Female" },
+            { name: 'Peter Carlsson', img: '1.jpg', dateJoined: currentDate - 10500, gender: "Male" },
+            { name: 'John Cage', img: '4.jpg', dateJoined: currentDate - 32500, gender: "Male" },
+            { name: 'David Kellerman', img: '2.jpg', dateJoined: currentDate - 54500, gender: "Male" }
         ];
 
         $scope.selected = {};

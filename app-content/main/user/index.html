@@ -1,1 +1,24 @@
-User test {{user}}
+<div class="profile-pic">
+    <img alt="{{ user.name }}" ng-src="{{'/assets/img/' + user.img }}" class="md-avatar" />
+</div>
+
+<md-list-item class="noright">
+    <p>
+        <b>Name:</b>
+    </p>
+    <p class="right">{{user.name}}</p>
+</md-list-item>
+
+<md-list-item class="noright">
+    <p>
+        <b>Date Joined:</b>
+    </p>
+    <p class="right">{{user.dateJoined | date:'d MMMM yyyy at HH:mm'}}</p>
+</md-list-item>
+
+<md-list-item class="noright">
+    <p>
+        <b>Gender:</b>
+    </p>
+    <p class="right">{{user.gender}}</p>
+</md-list-item>
