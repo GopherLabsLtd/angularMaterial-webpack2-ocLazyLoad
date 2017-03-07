@@ -1,4 +1,4 @@
-# Express + AngularJS + AngularMaterial + Webpack 2
+# Express + AngularJS + AngularMaterial + Webpack 2 + ocLazyLoad
 ![angular 1.5.9](https://img.shields.io/badge/angular-1.5.9-brightgreen.svg) ![webpack 2.2.1](https://img.shields.io/badge/webpack-2.2.1-brightgreen.svg) ![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 This is an express server setup being built using webpack, and running angular-material on the frontend.
