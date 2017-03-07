@@ -1,6 +1,6 @@
 export default ngModule => {
     ngModule
-    .controller('indexController', ['$scope', function($scope) {
+    .controller('indexController', ['$scope', '$state', function($scope, $state) {
         $scope.title = "Select some users";
 
         $scope.people = [
@@ -29,6 +29,10 @@ export default ngModule => {
             }
 
             return number;
+        };
+
+        $scope.userInfo = function(user) {
+            $state.go('user', {userName: user.name.toLowerCase().replace(/\s/g, ''), user: user});
         };
     }]);
 };

@@ -39,7 +39,7 @@ export default (ngModuleRef, angularRef) => {
         })
 
         .state('user', {
-            url: '/user',
+            url: '/user/{userName}',
             controller: 'userController',
             templateProvider: ['$q', function ($q) {
                 let deferred = $q.defer();
@@ -63,6 +63,9 @@ export default (ngModuleRef, angularRef) => {
                     
                     return deferred.promise;
                 }]
+           },
+           params: { 
+                user: null
            }
         })
 
