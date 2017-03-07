@@ -1,0 +1,13 @@
+md-icon {
+    &.mdi-space {
+        margin-right: 5px;
+    }
+}
+
+button {
+    &.md-icon-button {
+        md-icon {
+            font-size: 21px;
+        }
+    }
+}
