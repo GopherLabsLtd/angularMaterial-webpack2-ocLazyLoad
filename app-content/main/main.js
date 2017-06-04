@@ -9,65 +9,14 @@ export default (ngModuleRef, angularRef) => {
             events: true
         });
         
-        $stateProvider
-        .state('index', {
-            url: '/',
-            controller: 'indexController',
-            templateProvider: ['$q', function ($q) {
-                let deferred = $q.defer();
-                require.ensure(['./index/index.html'], function () {
-                    let template = require('./index/index.html');
-                    deferred.resolve(template);
-                });
-
-                return deferred.promise;
-            }],
-            resolve: {
-                foo: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
-                    let deferred = $q.defer();
-                    require.ensure([], function () {
-                        let module = require('./index/index.js')(angularRef);
-                        $ocLazyLoad.load({
-                            name: 'myAppIndex'
-                        });
-                        deferred.resolve(module);
-                    });
-                    
-                    return deferred.promise;
-                }]
-           }
-        })
-
-        .state('user', {
-            url: '/user/{userName}',
-            controller: 'userController',
-            templateProvider: ['$q', function ($q) {
-                let deferred = $q.defer();
-                require.ensure(['./user/index.html'], function () {
-                    let template = require('./user/index.html');
-                    deferred.resolve(template);
-                });
-
-                return deferred.promise;
-            }],
-            resolve: {
-                foo: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
-                    let deferred = $q.defer();
-                    require.ensure([], function () {
-                        let module = require('./user/index.js')(angularRef);
-                        $ocLazyLoad.load({
-                            name: 'myAppUser'
-                        });
-                        deferred.resolve(module);
-                    });
-                    
-                    return deferred.promise;
-                }]
-           },
-           params: { 
-                user: null
-           }
-        })
+        // Find all files in this directory or it's sub-directories
+        // With an extension of ".routes.js" and import them here
+        function requireAll(r) {
+            for (var i = 0; i < r.keys().length; i++) {
+                require(r.keys()[i] + "")($stateProvider, angularRef);
+            }
+        }
+        requireAll(require.context('./', true, /\.routes.js$/));
 
         $urlRouterProvider.otherwise('/');
     }])
